@@ -3,6 +3,7 @@
 #include <StepperDriver.h>
 #include <PololuMaestro.h>
 #include <SoftwareSerial.h>
+//change here
 
 //Stepper Motor 1 Configuration - Shoulder Joint 1
 const uint8_t Stepper1_CSPin = 33;
