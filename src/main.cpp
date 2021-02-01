@@ -17,8 +17,8 @@ const uint16_t Stepper1_StepsPerRev = 4000;
 const uint16_t Stepper2_StepsPerRev = 200;
 
 //Stepper Control Object Creation
-Stepper Stepper1(Stepper1_CSPin, Stepper1_ZeroPin, CurrentLineLimit, HPSDStepMode::MicroStep1, Stepper1_StepsPerRev, CoilInductance, CoilVoltage); //init shoulder stepper with known configuration
-Stepper Stepper2(Stepper2_CSPin, Stepper2_ZeroPin, CurrentLineLimit, HPSDStepMode::MicroStep64, Stepper2_StepsPerRev, CoilInductance, CoilVoltage); //init base stepper with known configuration
+Stepper Stepper1(Stepper1_CSPin, Stepper1_ZeroPin, CurrentLineLimit, HPSDStepMode::MicroStep64, Stepper1_StepsPerRev, CoilInductance, CoilVoltage); //init shoulder stepper with known configuration
+Stepper Stepper2(Stepper2_CSPin, Stepper2_ZeroPin, CurrentLineLimit, HPSDStepMode::MicroStep128, Stepper2_StepsPerRev, CoilInductance, CoilVoltage); //init base stepper with known configuration
 
 float degPerStep = 0.0;
 float degreesToRotate = 90.0;
@@ -41,13 +41,13 @@ void setup() {
 }
 
 void loop() {
-  Stepper1.RotateDegrees(30.0);
+  Stepper1.RotateDegrees(90.0);
   delay(1000);
-  Stepper2.RotateDegrees(30.0);
+  Stepper2.RotateDegrees(90.0);
   delay(1000);
-  Stepper1.RotateDegrees(-30.0);
+  Stepper1.RotateDegrees(-90.0);
   delay(1000);
-  Stepper2.RotateDegrees(-30.0);
+  Stepper2.RotateDegrees(-90.0);
   delay(3000);
 }
 
